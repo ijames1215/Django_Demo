@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'css/NewWordCloud1.css' %}" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <title>Demo</title>
+</head>
+<body>
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead >
+                <th>ID</th>
+                <th>Gender</th>
+                <th>Math_Score</th>
+                <th>ENG_Score</th>
+            {% for i in filter %}
+            <tr>
+                <td>{{ i.no }}</td>
+                <td>{{ i.gender }}</td>
+                <td>{{ i.math_score }}</td>
+                <td>{{ i.eng_score }}</td>
+            </tr>
+            {% endfor %}
+        </thead>
+    </table>
+</body>
+</html>
